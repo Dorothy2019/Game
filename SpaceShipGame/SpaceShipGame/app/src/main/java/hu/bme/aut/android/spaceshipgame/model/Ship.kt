@@ -34,8 +34,10 @@ abstract class Ship : Renderable {
     override fun render(canvas: Canvas) {
         setSpriteSizes()
 
+        val statePosition = state % 4
+
         val x = 0
-        val y = 0
+        val y = spriteHeight * statePosition
 
         val src = Rect(x, y, x + spriteWidth, y + spriteHeight)
         val dst = Rect(posX, posY, posX + spriteWidth * 4, posY + spriteHeight * 4)
